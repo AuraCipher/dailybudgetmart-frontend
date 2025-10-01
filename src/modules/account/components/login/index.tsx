@@ -17,45 +17,53 @@ const Login = ({ setCurrentView }: Props) => {
       className="max-w-sm w-full flex flex-col items-center"
       data-testid="login-page"
     >
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-8">
-        Sign in to access an enhanced shopping experience.
+      <h1 className="text-3xl font-bold text-primary mb-2">Welcome Back</h1>
+      <p className="text-center text-muted-foreground mb-8">
+        Sign in to your DailyBudgetMart account
       </p>
-      <form className="w-full" action={formAction}>
-        <div className="flex flex-col w-full gap-y-2">
-          <Input
-            label="Email"
-            name="email"
-            type="email"
-            title="Enter a valid email address."
-            autoComplete="email"
-            required
-            data-testid="email-input"
-          />
-          <Input
-            label="Password"
-            name="password"
-            type="password"
-            autoComplete="current-password"
-            required
-            data-testid="password-input"
-          />
+      <form className="w-full space-y-4" action={formAction}>
+        <div className="flex flex-col w-full gap-y-4">
+          <div className="relative">
+            <Input
+              label="Email"
+              name="email"
+              type="email"
+              title="Enter a valid email address."
+              autoComplete="email"
+              required
+              data-testid="email-input"
+              className="w-full px-4 py-3 border border-border rounded-lg focus:border-primary focus:outline-none transition-colors"
+            />
+          </div>
+          <div className="relative">
+            <Input
+              label="Password"
+              name="password"
+              type="password"
+              autoComplete="current-password"
+              required
+              data-testid="password-input"
+              className="w-full px-4 py-3 border border-border rounded-lg focus:border-primary focus:outline-none transition-colors"
+            />
+          </div>
         </div>
         <ErrorMessage error={message} data-testid="login-error-message" />
-        <SubmitButton data-testid="sign-in-button" className="w-full mt-6">
-          Sign in
+        <SubmitButton 
+          data-testid="sign-in-button" 
+          className="w-full py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors duration-200"
+        >
+          Sign In
         </SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        Not a member?{" "}
+      <span className="text-center text-muted-foreground text-sm mt-6">
+        Don't have an account?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
-          className="underline"
+          className="text-primary font-semibold hover:underline transition-all"
           data-testid="register-button"
         >
-          Join us
+          Create Account
         </button>
-        .
       </span>
     </div>
   )

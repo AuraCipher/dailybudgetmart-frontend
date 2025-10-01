@@ -21,6 +21,26 @@ module.exports = {
         padding: "padding-top padding-right padding-bottom padding-left",
       },
       colors: {
+        primary: {
+          DEFAULT: "hsl(var(--color-primary))",
+          foreground: "hsl(var(--color-primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--color-secondary))",
+          foreground: "hsl(var(--color-secondary-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--color-accent))",
+          foreground: "hsl(var(--color-accent-foreground))",
+        },
+        background: "hsl(var(--color-background))",
+        foreground: "hsl(var(--color-foreground))",
+        muted: {
+          DEFAULT: "hsl(var(--color-muted))",
+          foreground: "hsl(var(--color-muted-foreground))",
+        },
+        border: "hsl(var(--color-border))",
+        input: "hsl(var(--color-input))",
         grey: {
           0: "#FFFFFF",
           5: "#F9FAFB",

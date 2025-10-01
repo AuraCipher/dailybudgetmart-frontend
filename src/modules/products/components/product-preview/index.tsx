@@ -30,19 +30,29 @@ export default async function ProductPreview({
 
   return (
     <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div data-testid="product-wrapper">
-        <Thumbnail
-          thumbnail={product.thumbnail}
-          images={product.images}
-          size="full"
-          isFeatured={isFeatured}
-        />
-        <div className="flex txt-compact-medium mt-4 justify-between">
-          <Text className="text-ui-fg-subtle" data-testid="product-title">
+      <div data-testid="product-wrapper" className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+        <div className="relative overflow-hidden bg-grey-5">
+          <Thumbnail
+            thumbnail={product.thumbnail}
+            images={product.images}
+            size="full"
+            isFeatured={isFeatured}
+          />
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+        </div>
+        <div className="p-4 space-y-2">
+          <Text className="text-primary font-semibold line-clamp-1 group-hover:text-primary/80 transition-colors" data-testid="product-title">
             {product.title}
           </Text>
-          <div className="flex items-center gap-x-2">
-            {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
+          <div className="flex items-center justify-between">
+            {cheapestPrice && (
+              <div className="text-lg font-bold text-primary">
+                <PreviewPrice price={cheapestPrice} />
+              </div>
+            )}
+            <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full">
+              In Stock
+            </span>
           </div>
         </div>
       </div>

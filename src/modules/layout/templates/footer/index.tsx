@@ -12,16 +12,19 @@ export default async function Footer() {
   const productCategories = await listCategories()
 
   return (
-    <footer className="border-t border-ui-border-base w-full">
+    <footer className="border-t border-border w-full bg-muted/50">
       <div className="content-container flex flex-col w-full">
-        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
+        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-20">
           <div>
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+              className="text-2xl font-bold text-primary hover:text-muted-foreground transition-colors duration-200"
             >
-              Medusa Store
+              DailyBudgetMart
             </LocalizedClientLink>
+            <p className="text-sm text-muted-foreground mt-2 max-w-xs">
+              Your trusted marketplace for quality products at everyday prices.
+            </p>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {productCategories && productCategories?.length > 0 && (
@@ -109,47 +112,52 @@ export default async function Footer() {
               </div>
             )}
             <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">Medusa</span>
-              <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
+              <span className="font-semibold text-primary">Support</span>
+              <ul className="grid grid-cols-1 gap-y-2 text-muted-foreground text-sm">
                 <li>
                   <a
-                    href="https://github.com/medusajs"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
+                    href="/contact"
+                    className="hover:text-primary transition-colors duration-200"
                   >
-                    GitHub
+                    Contact Us
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://docs.medusajs.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
+                    href="/faq"
+                    className="hover:text-primary transition-colors duration-200"
                   >
-                    Documentation
+                    FAQ
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://github.com/medusajs/nextjs-starter-medusa"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
+                    href="/shipping"
+                    className="hover:text-primary transition-colors duration-200"
                   >
-                    Source code
+                    Shipping Info
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/returns"
+                    className="hover:text-primary transition-colors duration-200"
+                  >
+                    Returns
                   </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
-          <Text className="txt-compact-small">
-            © {new Date().getFullYear()} Medusa Store. All rights reserved.
+        <div className="flex w-full py-8 border-t border-border justify-between items-center">
+          <Text className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} DailyBudgetMart. All rights reserved.
           </Text>
-          <MedusaCTA />
+          <div className="flex gap-4">
+            <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>

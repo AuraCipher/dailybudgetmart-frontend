@@ -2,6 +2,35 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+  :root {
+    /* Modern Black/White/Grey Color System */
+    --color-primary: 0 0% 0%; /* Pure Black */
+    --color-primary-foreground: 0 0% 100%; /* White */
+    
+    --color-secondary: 0 0% 96%; /* Light Grey */
+    --color-secondary-foreground: 0 0% 9%; /* Dark Grey */
+    
+    --color-accent: 200 7% 8%; /* Subtle Dark Blue-Grey */
+    --color-accent-foreground: 0 0% 100%; /* White */
+    
+    --color-background: 0 0% 100%; /* White */
+    --color-foreground: 0 0% 9%; /* Almost Black */
+    
+    --color-muted: 0 0% 96%; /* Light Grey */
+    --color-muted-foreground: 0 0% 45%; /* Mid Grey */
+    
+    --color-border: 0 0% 92%; /* Light Border */
+    --color-input: 0 0% 92%; /* Input Border */
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  }
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -35,9 +64,9 @@
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    border: 1px solid #212121;
-    -webkit-text-fill-color: #212121;
-    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    border: 1px solid hsl(var(--color-border));
+    -webkit-text-fill-color: hsl(var(--color-foreground));
+    -webkit-box-shadow: 0 0 0px 1000px hsl(var(--color-background)) inset;
     transition: background-color 5000s ease-in-out 0s;
   }
 
