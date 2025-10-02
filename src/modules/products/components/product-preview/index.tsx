@@ -30,7 +30,7 @@ export default async function ProductPreview({
 
   return (
     <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div data-testid="product-wrapper" className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+      <div data-testid="product-wrapper" className="bg-white rounded-xl border-2 border-black overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.05] hover:-translate-y-1">
         <div className="relative overflow-hidden bg-grey-5">
           <Thumbnail
             thumbnail={product.thumbnail}
@@ -41,7 +41,7 @@ export default async function ProductPreview({
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
         </div>
         <div className="p-4 space-y-2">
-          <Text className="text-primary font-semibold line-clamp-1 group-hover:text-primary/80 transition-colors" data-testid="product-title">
+          <Text className="text-primary font-semibold line-clamp-2 group-hover:text-primary/80 transition-colors" data-testid="product-title">
             {product.title}
           </Text>
           <div className="flex items-center justify-between">
@@ -50,7 +50,7 @@ export default async function ProductPreview({
                 <PreviewPrice price={cheapestPrice} />
               </div>
             )}
-            <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full">
+            <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full border border-black/10">
               In Stock
             </span>
           </div>
