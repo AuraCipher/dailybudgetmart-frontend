@@ -15,11 +15,12 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": "./src",
-    "paths": {
-      "@lib/*": ["lib/*"],
-      "@modules/*": ["modules/*"],
-      "@pages/*": ["pages/*"]
-    },
+   "paths": {
+  "@lib/*": ["./lib/*"],
+  "@modules/*": ["./modules/*"],
+  "@pages/*": ["./pages/*"]
+}
+
     "plugins": [
       {
         "name": "next"
