@@ -1,15 +1,17 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import heroBackground from "@/assets/hero-background.jpg"
 
 const Hero = () => {
   return (
-    <div className="relative h-[85vh] w-full bg-gradient-to-br from-grey-5 via-white to-grey-5 overflow-hidden">
-      {/* Animated background patterns */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,0,0,0.03),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,0,0,0.02),transparent)]" />
+    <div className="relative h-[85vh] w-full overflow-hidden">
+      {/* Hero Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
       
-      {/* Floating elements for visual interest */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-white/40" />
       
       <div className="relative h-full flex flex-col justify-center items-center text-center px-6 small:px-32">
         <div className="max-w-4xl space-y-8 animate-fade-in">
