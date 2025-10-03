@@ -1,5 +1,4 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import heroBackground from "../../../assets/hero-background.jpg"
 
 const Hero = () => {
   return (
@@ -7,7 +6,7 @@ const Hero = () => {
       {/* Hero Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBackground})` }}
+        style={{ backgroundImage: "url(/images/hero-background.jpg)" }}
       />
       
       {/* Overlay for better text readability */}
