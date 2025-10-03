@@ -1,5 +1,5 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import heroBackground from "@/assets/hero-background.jpg"
+import heroBackground from "../../../assets/hero-background.jpg"
 
 const Hero = () => {
   return (
